@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: 'sarahedo',
     name: 'Sarah Edo',
-    avatarURL: '../../images/snow.jpg',
+    avatarURL: 'https://image.freepik.com/free-vector/smiling-girl-avatar_102172-32.jpg',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionOne',
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: '../../images/tyler.jpg',
+    avatarURL: 'https://static.toiimg.com/photo/76729750.cms',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL: '../../images/leaf.jpg',
+    avatarURL: 'https://cdn.pixabay.com/photo/2013/07/13/10/07/man-156584__340.png',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
@@ -199,4 +199,10 @@ export function _saveQuestionAnswer ({ authedUser, qid, answer }) {
       res()
     }, 500)
   })
+}
+
+export function formatDate(timestamp) {
+  const d = new Date(timestamp)
+  const time = d.toLocaleTimeString('en-GB')
+  return time + ' | ' + d.toLocaleDateString()
 }

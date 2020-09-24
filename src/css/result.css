@@ -1,0 +1,29 @@
+.question__container__res{
+ margin:auto;
+  margin-top:20px
+}
+.question__res{
+ height:500px
+}
+.question__header__res{
+ background-color:#F5F5F5;
+ height:50px;
+ margin-top:-22px
+ 
+}
+.card__res{
+ margin:auto;
+ background-color:black;
+ height:480px;
+ width:600px
+}
+
+.answer__res{
+flex:1;
+margin-top:-30px
+}
+
+.result__container__res{
+margin-bottom:15px;
+padding:5px;
+}

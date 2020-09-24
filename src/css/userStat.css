@@ -1,0 +1,21 @@
+.userStat__card{
+ margin:auto;
+ heigth:100px;
+ width:500px;
+
+}
+
+.userStat__card__content{
+ display:flex
+}
+
+.userStat{
+ display:flex;
+ margin-top:20px
+}
+
+.userStat__score{
+margin:15px;
+text-align:center;
+padding:5px;
+}

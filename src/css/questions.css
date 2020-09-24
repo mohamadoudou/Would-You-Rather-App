@@ -1,0 +1,9 @@
+.questions__container{
+  margin:auto;
+  margin-top:20px;
+  background-color:black;
+  width:600px
+}
+ul{
+list-style-type:none
+}

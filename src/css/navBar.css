@@ -1,0 +1,25 @@
+.root{
+    flex-grow: 1px
+  }
+.tool__bar{
+ margin-left:100px
+}
+.menuButton{
+  margin-right: 2px
+}
+.title{
+  flex-grow: 1px;
+  padding:20px
+}
+.logout{
+ display:flex;
+ float: right;
+ margin-left:auto;
+}
+.title{
+ 
+}
+.nav__link{
+text-decoration:none;
+  
+}
