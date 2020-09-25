@@ -8,7 +8,12 @@ class Leaderboard extends Component {
   render(){
     const {sortUsers,authedUser}= this.props  
     if(authedUser===null){
-    return( <Redirect to='/login' />)
+    return( <Redirect 
+           to={{
+           pathname:'/login',
+           state:{referrer:'/leaderboard'}
+           }}
+           />)
     }
     else{
   	return (

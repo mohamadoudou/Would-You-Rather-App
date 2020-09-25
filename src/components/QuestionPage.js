@@ -26,22 +26,26 @@ class QuestionPage extends Component{
   const answer=this.state.answer
   if(authedUser===null){this.props.history.push('/login')}
   else{
-      this.props.dispatch(handleSaveAnswer({authedUser,qid,answer}))
+      this.props.handleSaveAnswer({authedUser,qid,answer})
      }
   }
   
   render(){
-    const {question,id}=this.props
+    const {question,id,authedUser}=this.props
+    console.log('question value',question)
     if(!question){
+        if(authedUser===null){return(<Redirect to={{
+                                     pathname:'/login',
+                                     state:{referrer:`/questions/${id}`}
+                                     }}/>)}
     	return(<NotFound/>)
     }
     const {optionOne,optionTwo}=question
-    const {userAvatar,userName,authedUser} =this.props
+    const {userAvatar,userName} =this.props
     const enabled=this.state.answer.length>0
     const goToPoll=optionOne.votes.includes(authedUser)||optionTwo.votes.includes(authedUser)?false:true
     if(!goToPoll){ return(<Result id={id}/>)}
     else { 
-       if(authedUser===null){return(<Redirect to='/login'/>)}
        return (
        <div className='question__container'>
             <div className='question'>
@@ -87,4 +91,4 @@ function mapStateToProps({questions,users,authedUser},props){
     }
 }
 
-export default withRouter(connect(mapStateToProps)(QuestionPage))
+export default withRouter(connect(mapStateToProps,{ handleSaveAnswer })(QuestionPage))

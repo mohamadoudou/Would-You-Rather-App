@@ -1,19 +1,11 @@
-import React,{Component} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import {Card,CardContent,CardHeader,Avatar} from '@material-ui/core'
 import '../css/userStat.css'
 
 
-class UserStat extends Component{
-
-render(){
-  
-  const {user,answeredQuestions,createdQuestions}=this.props
-  if(!user){
-    return(<div>Loading</div>)
-  }
-  
-  return(
+const UserStat=({user,answeredQuestions,createdQuestions}) =>
+  user?(
       <div className='userStat'>
           <Card className='userStat__card'>
               <CardContent >
@@ -36,9 +28,10 @@ render(){
               </CardContent>
           </Card>
       </div>
-)
-}
-}
+      ):(
+        <div>Loading</div>
+      )
+
 
 function mapStateToProps({questions,authedUser,users},{userId}){
     const user=users?users[userId]:null

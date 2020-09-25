@@ -30,12 +30,16 @@ class NewQuestion extends Component{
      optionOneText:'',
      optionTwoText:''
    }))
+    
    this.props.history.push('/')
   }
   
   render(){
     if(this.props.authedUser===null){
-    return( <Redirect to='/login' />)
+    return( < Redirect to={{
+           pathname:'/login',
+           state:{referrer:'/add'}
+           }} />)
     }
     const enabled=this.state.optionOneText.length>0&&this.state.optionTwoText.length>0
     

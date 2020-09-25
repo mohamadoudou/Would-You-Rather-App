@@ -14,7 +14,7 @@ class NavBar extends Component{
       this.props.dispatch(handleLogout())
       this.props.history.push('/login')
     }  
-  
+  clear
 	render(){
         
         const {logUser}=this.props
@@ -24,7 +24,7 @@ class NavBar extends Component{
                                    <Avatar src={logUser.avatarURL}/>
                                 <Button color="inherit"  onClick={this.handleSubmit}>Log Out</Button>
                              </React.Fragment>
-                                 ):(<div></div>)
+                                 ):(null)
       
     	return(
                 <div className='root'>

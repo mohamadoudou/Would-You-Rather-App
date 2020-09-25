@@ -1,9 +1,23 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Redirect,withRouter} from 'react-router-dom'
 
-export default function NotFound(){
+const NotFound=({authedUser})=>
+    authedUser?(
+        <h1 style={{textAlign:'center'}}>uuppps!!!  Not Found</h1>
+     ):(
+        <Redirect to={{
+         pathname:'/login',
+         state:{referrer:'/badUrl'}
+       }}/>
+     )
 
-return(
-  <div><h1>Not Found</h1><Link to='/login'>LOGIN to Procede </Link></div>
-)
+
+
+function mapStateToProps({authedUser}){
+	return{
+      authedUser
+    }
 }
+
+export default withRouter(connect(mapStateToProps)(NotFound))

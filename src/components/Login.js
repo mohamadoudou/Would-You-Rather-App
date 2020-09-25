@@ -20,7 +20,8 @@ class Login extends Component{
   handleSubmit=(e)=>{
     e.preventDefault()
     this.props.dispatch(setAuthedUser(this.state.selectedUser))
-    this.props.history.push('/')
+    const redirect_to=this.props.location.state?this.props.location.state.referrer:'/'
+    this.props.history.push(redirect_to)
   }
   
   render(){
