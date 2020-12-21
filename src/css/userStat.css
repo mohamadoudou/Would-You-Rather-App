@@ -1,8 +1,7 @@
 .userStat__card{
  margin:auto;
- heigth:100px;
  width:500px;
-
+ border: 1px solid rgb(65, 25, 209);
 }
 
 .userStat__card__content{
@@ -11,11 +10,16 @@
 
 .userStat{
  display:flex;
- margin-top:20px
+ margin-top:10px;
+ 
+ 
 }
-
+ul{
+    list-style-type:none
+}
 .userStat__score{
-margin:15px;
+margin:2px;
 text-align:center;
 padding:5px;
+
 }

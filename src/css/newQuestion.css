@@ -1,8 +1,41 @@
 
 .card__new__question{
- margin:auto;
- background-color:black;
+margin: auto; 
+ margin-top: 3rem;
+ border: 0.5px solid rgb(65, 25, 209);
  text-align:center;
  height:480px;
  width:600px
+}
+.card__new__question p{
+    margin: 10px;
+    font-size: 1.5rem;
+}
+.input__question{
+    width: 20rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border-radius: 15px;
+    border: 0.5px solid rgb(65, 25, 209);
+    border-left: 2px solid rgb(65, 25, 209);
+    border-bottom: 3px solid rgb(65, 25, 209);
+    border-right: 2px solid rgb(65, 25, 209);
+    font-size: 1.25rem;
+}
+.input__question:focus {
+    outline: 0;
+}
+button{
+    width: 20rem;
+    height: 2.5rem;
+    margin-top: 2rem;
+    padding-left: 1rem;
+    border-radius: 15px;
+    border: 0.5px solid rgb(65, 25, 209);
+    border-left: 2px solid rgb(65, 25, 209);
+    border-bottom: 3px solid rgb(65, 25, 209);
+    border-right: 2px solid rgb(65, 25, 209);
+    font-size: 1.25rem;
+    background-color: rgb(65, 25, 209);
+    color: white;
 }

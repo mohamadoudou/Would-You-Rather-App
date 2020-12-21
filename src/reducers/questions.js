@@ -1,19 +1,19 @@
-import {GET_QUESTIONS} from '../actions/questions'
-import {SAVE_ANSWER,ADD_QUESTION} from '../actions/shared'
+import { GET_QUESTIONS } from '../actions/questions'
+import { SAVE_ANSWER, ADD_QUESTION } from '../actions/shared'
 
 
-export function questions(state={},action){
-  switch(action.type){
+export function questions(state = {}, action) {
+  switch (action.type) {
     case GET_QUESTIONS:
       //change the spread operations if any problem
-      return{
-      ...state,
+      return {
+        ...state,
         ...action.questions
       }
     case SAVE_ANSWER:
       const { authedUser, qid, answer } = action
-      return{
-      	...state,
+      return {
+        ...state,
         [qid]: {
           ...state[qid],
           [answer]: {
@@ -23,11 +23,11 @@ export function questions(state={},action){
         }
       }
     case ADD_QUESTION:
-      return{
-      	...state,
-          [action.formattedQuestion.id]:action.formattedQuestion
+      return {
+        ...state,
+        [action.formattedQuestion.id]: action.formattedQuestion
       }
-    default:return state
+    default: return state
   }
 
 }

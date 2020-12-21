@@ -1,23 +1,23 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Redirect,withRouter} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { Redirect, withRouter } from 'react-router-dom'
 
-const NotFound=({authedUser})=>
-    authedUser?(
-        <h1 style={{textAlign:'center'}}>uuppps!!!  Not Found</h1>
-     ):(
-        <Redirect to={{
-         pathname:'/login',
-         state:{referrer:'/badUrl'}
-       }}/>
-     )
+const NotFound = ({ authedUser }) =>
+  authedUser ? (
+    <h1 style={{ textAlign: 'center' }}>uuppps!!!  Not Found</h1>
+  ) : (
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: '/badUrl' }
+      }} />
+    )
 
 
 
-function mapStateToProps({authedUser}){
-	return{
-      authedUser
-    }
+function mapStateToProps({ authedUser }) {
+  return {
+    authedUser
+  }
 }
 
 export default withRouter(connect(mapStateToProps)(NotFound))

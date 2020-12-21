@@ -1,19 +1,19 @@
-import {_getQuestions} from '../_DATA'
-export const GET_QUESTIONS='GET_QUESTIONS'
+import { _getQuestions } from '../_DATA'
+export const GET_QUESTIONS = 'GET_QUESTIONS'
 
 
-function getQuestions(questions){
+function getQuestions(questions) {
   return {
-    type:GET_QUESTIONS,
+    type: GET_QUESTIONS,
     questions
   }
 }
 
 
-export function handleGetQuestions(){
-	return (dispatch)=>{
-      return _getQuestions()
-      .then((questions)=>dispatch(getQuestions(questions)))
-    }
+export function handleGetQuestions() {
+  return (dispatch) => {
+    return _getQuestions()
+      .then((questions) => dispatch(getQuestions(questions)))
+  }
 }
 

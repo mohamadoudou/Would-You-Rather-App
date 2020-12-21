@@ -11,13 +11,14 @@ class Leaderboard extends Component {
     return( <Redirect 
            to={{
            pathname:'/login',
-           state:{referrer:'/leaderboard'}
+           state:{from:'/leaderboard'}
            }}
            />)
     }
     else{
   	return (
-      	<div style={{marginTop:'20px'}}>
+      	<div style={{marginTop:60}}>
+          <ul>
         	{sortUsers.map((user)=>{
     			return(
                 	<li key={user.id}>
@@ -25,6 +26,7 @@ class Leaderboard extends Component {
                   	</li>
                 )
         	})}
+          </ul>
       	</div>
    	 )
    }

@@ -1,10 +1,64 @@
 .container__login{
- margin:auto;
+ margin-top:2rem;
  text-align:center
 }
-.card__login{
- margin:auto;
- width:500px;
+
+.card__welcome{
+    flex: 1;
+    height: 100%;
+    background-image: url('../images/login-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-input{
+.card__login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    width:900px;
+    height: 500px;
+    border: 0.5px solid rgb(65, 25, 209);
+ 
+}
+
+.card__login h4{
+ font-size: 2rem;
+ font-family: Arial, Helvetica, sans-serif;
+ color: white;
+}
+.card__login h2{
+    margin-top: -2rem;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+.select__login{
+    width: 20rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+    border-radius: 15px;
+    border: 0.5px solid rgb(65, 25, 209);
+    border-left: 2px solid rgb(65, 25, 209);
+    border-bottom: 3px solid rgb(65, 25, 209);
+    border-right: 2px solid rgb(65, 25, 209);
+    font-size: 1.25rem;
+}
+select:focus {
+    outline: 0;
+}
+
+.login__submit{
+    width: 20rem;
+    height: 2.5rem;
+    margin-top: 5rem;
+    padding-left: 1rem;
+    border-radius: 15px;
+    border: 0.5px solid rgb(65, 25, 209);
+    border-left: 2px solid rgb(65, 25, 209);
+    border-bottom: 3px solid rgb(65, 25, 209);
+    border-right: 2px solid rgb(65, 25, 209);
+    font-size: 1.25rem;
+    background-color: rgb(65, 25, 209);
+    color: white;
+   
 }
