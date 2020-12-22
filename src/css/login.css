@@ -16,12 +16,16 @@
     justify-content: center;
     align-items: center;
     margin:auto;
-    width:900px;
+    width:800px;
     height: 500px;
     border: 0.5px solid rgb(65, 25, 209);
  
 }
-
+@media only screen and (max-width:800px){
+    .card__login{
+        width: 700px;
+    }
+}
 .card__login h4{
  font-size: 2rem;
  font-family: Arial, Helvetica, sans-serif;
