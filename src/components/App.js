@@ -18,10 +18,13 @@ function PrivateRoute({ authedUser, children, ...rest }) {
       {...rest}
       render={({ location }) => {
         return authedUser === null ?
+        <React.Fragment>
+        { alert('please Login to Continue')}
           <Redirect to={{
             pathname: '/login',
             state: { from: location }
-          }} /> : children
+          }} />
+        </React.Fragment> : children
       }}
     />
 
@@ -41,8 +44,8 @@ class App extends Component {
         <Switch>
           <Route path='/login' exact > <Login /></Route>
           <PrivateRoute path='/add' exact authedUser={this.props.authedUser}><NewQuestion /></PrivateRoute>
-          <PrivateRoute path='/leaderboard' exact><Leaderboard /></PrivateRoute>
-          <Route path='/' exact> <Questions /></Route>
+          <PrivateRoute path='/leaderboard' exact authedUser={this.props.authedUser}><Leaderboard /></PrivateRoute>
+          <PrivateRoute path='/' exact> <Questions /></PrivateRoute>
           <Route path='/questions/:question_id' exact><QuestionPage /></Route>
           <Route component={NotFound} />
         </Switch>
